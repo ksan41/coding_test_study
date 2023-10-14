@@ -25,8 +25,7 @@ public class Exam1_12 {
                 }
             }
             binaryNum = Integer.parseInt(String.valueOf(binaryNum), 2);
-            byte b = (byte)(binaryNum & 0xff);
-            answer += String.valueOf((char)b);
+            answer += (char)binaryNum;
             idx += 7;
         }
 
