@@ -22,9 +22,6 @@ public class Exam2_08 {
         
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                if (i == j) {
-                    continue;
-                }
                 if (arr[i] < arr[j]) {
                     rank[i] += 1;
                 }
