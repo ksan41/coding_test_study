@@ -20,9 +20,9 @@ public class Exam6_08 {
       public static int solution(int[] arr, int m) {
         Arrays.sort(arr);
 
-        int start = 0, end = arr.length - 1;
-        while (start < end) {
-            int mid = (end + start) / 2;
+        int start = 0, end = arr.length - 1, mid = 0;
+        while (start <= end) {
+            mid = (end + start) / 2;
 
             if (arr[mid] == m) {
                 return mid + 1;
@@ -33,6 +33,6 @@ public class Exam6_08 {
             }
         }
 
-        return start + 1;
+        return mid + 1;
       }
 }
