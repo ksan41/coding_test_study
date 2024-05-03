@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exam8_07 {
     static int[][] dy = new int[35][35];
 
+    // 이항계수
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
