@@ -23,12 +23,13 @@ class Sqare {
 
 public class Exam1074 {
     
-    static int n, r, c, N, cnt, answer = 0;
+    static int n, r, c, N = 0;
+    static long cnt, answer = 0;
     static boolean flg = false;
     static int[] dirX = {1,-1,1};
     static int[] dirY = {0,1,0};
 
-    // Z (ing)
+    // Z
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -47,6 +48,11 @@ public class Exam1074 {
         if (squre.size == 4) {
             int nx = squre.startX;
             int ny = squre.startY;
+            if (nx == c && ny == r) {
+                answer = cnt;
+                flg = true;
+                return;
+            }
             cnt++;
             for (int i = 0; i < dirX.length; i++) {
                 nx += dirX[i];
@@ -67,7 +73,11 @@ public class Exam1074 {
                         flg = true;
                         return;
                     }
-                    solution(new Sqare(j, i, j + (squre.endX - squre.startX)/2, i + (squre.endY - squre.startY)/2, squre.size / 4));
+                    if (j + (squre.endX - squre.startX)/2 < c || i + (squre.endY - squre.startY)/2 < r) {
+                        cnt += squre.size / 4;
+                    } else {
+                        solution(new Sqare(j, i, j + (squre.endX - squre.startX)/2, i + (squre.endY - squre.startY)/2, squre.size / 4));
+                    }
                 }
             }
         }
