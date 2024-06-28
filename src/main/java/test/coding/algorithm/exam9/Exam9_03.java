@@ -57,8 +57,7 @@ public class Exam9_03 {
         for (int i = 0; i < friends.size(); i++) {
             if (friends.get(i).when == 'E') {
                 cnt--;
-            }
-            if (friends.get(i).when == 'S') {
+            } else {
                 cnt++;
             }
             max = Math.max(max, cnt);
